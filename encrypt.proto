@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service PbkdUtilities {
+  rpc Encrypt(EncryptParams) returns (EncryptResult) {}
+}
+
+message EncryptParams {
+  string stringToEncrypt = 1;
+  string password = 2;
+}
+
+message EncryptResult {
+  // if there is an error, this will be set
+  string errorMessage = 1;
+  string resultStr = 2;
+}
+
